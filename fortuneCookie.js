@@ -16,21 +16,44 @@ let fortunesArr = [
     "Your positive attitude will lead to success.",
 ]
 
-function randomFortune(){
-    return fortunesArr[Math.floor(Math.random() * 15)]
+function randomFortune(arr){
+    return arr[Math.floor(Math.random() * arr.length)]
 }
 
 let fortune = document.getElementById('fortuneText');
 let fortuneButton = document.getElementById('fortuneButton');
 
+let susButton = document.getElementById('susButton');
+let susText = document.getElementById('susText')
+
+let lyrics = document.getElementById('rick');
+
+
+function susFortune(){
+    susButton.style.visibility = 'visible';
+    susText.style.visibility = 'visible';
+}
+
+function pleaseDontPressAgain(){
+    alert('You already got your fortune good sir/m\'am, I cannot provide you another in good faith of my programming!');
+    susFortune();
+}
+
 function dailyFortune(){
-    fortune.innerHTML = randomFortune();
+    fortune.innerHTML = randomFortune(fortunesArr);
     fortuneButton.innerHTML = 'Have a Good Day!';
     fortuneButton.removeEventListener('click', dailyFortune);
+    fortuneButton.addEventListener('click', pleaseDontPressAgain);
+}
+
+function susFortuneText(){
+    susText.style.visibility ='hidden';
+    susButton.style.visibility = 'hidden';
+    lyrics.style.visibility = 'visible';
+    fortune.innerHTML = randomFortune(fortunesArr);
 }
 
 fortuneButton.addEventListener('click', dailyFortune);
-
-
+susButton.addEventListener('click', susFortuneText)
 
 
