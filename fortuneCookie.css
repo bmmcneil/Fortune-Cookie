@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headingContainer{
+    padding: 2rem;
+}
+
+.headingContainer h1 {
+    font-family: Acme;
+    font-size: 4rem;
+
+}
+
+.textContainer {
+    padding: 1rem;
+}
+
+.textContainer p {
+    font-family: "Indie Flower";
+    font-size: 2rem;
+}
+
+.buttonContainer {
+    padding: 1rem;
+}
+
+.buttonContainer button {
+    padding: 0.5rem;
+    font-family: Acme;
+    font-size: 1rem;
+}
